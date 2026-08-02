@@ -19,8 +19,8 @@ _(pendiente: enlace de YouTube como video no listado)_
 
 ```bash
 cd problema2
-python main.py                  # usa expresiones.txt
-python main.py otro_archivo.txt # o el archivo que se indique
+python main.py               
+python main.py otro_archivo.txt 
 ```
 
 Lee el archivo línea por línea y para cada expresión imprime la traza completa de la pila
@@ -38,7 +38,7 @@ Archivos:
 
 ```bash
 cd problema3
-python main.py                  # usa expresiones.txt
+python main.py                  
 python main.py otro_archivo.txt
 ```
 
