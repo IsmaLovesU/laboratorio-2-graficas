@@ -1,7 +1,7 @@
 # Laboratorio 2 - Teoría de la Computación
 
 Repositorio con las soluciones del laboratorio 2. Cada ejercicio va en su propia branch.
-[Video de ejecución)](https://youtu.be/1uaFaH1_GMk)
+
 
 ## Estructura de branches
 
@@ -14,7 +14,7 @@ Repositorio con las soluciones del laboratorio 2. Cada ejercicio va en su propia
 
 ## Video de ejecución
 
-_(pendiente: enlace de YouTube como video no listado)_
+[Video :))](https://youtu.be/1uaFaH1_GMk)
 
 ## Problema 2 — Balanceo de expresiones
 
