@@ -1,0 +1,4 @@
+# Archivos generados por Python
+__pycache__/
+*.py[cod]
+*.pyo
