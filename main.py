@@ -1,12 +1,3 @@
-"""
-Problema 2 - Balanceo de expresiones infix usando una pila.
-
-Uso:
-    python main.py [archivo]
-
-Si no se indica archivo, se usa 'expresiones.txt' por defecto.
-"""
-
 import sys
 
 from balanceador import balancear

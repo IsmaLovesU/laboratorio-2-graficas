@@ -1,11 +1,3 @@
-"""
-Implementacion manual de una pila (LIFO).
-
-Se hace a mano y no con los metodos de lista de Python directamente
-porque el enunciado pide explicitamente el uso de una estructura de pila.
-"""
-
-
 class PilaVaciaError(Exception):
     """Se lanza al intentar sacar o mirar el tope de una pila vacia."""
     pass

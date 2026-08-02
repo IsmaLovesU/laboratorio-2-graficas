@@ -1,24 +1,15 @@
-"""
-Tokenizador de expresiones regulares.
-
-Convierte la cadena de entrada en una lista de tokens. Esto es necesario
-porque el algoritmo de Shunting Yard trabaja con simbolos completos y no
-con caracteres sueltos: '\\(' es un parentesis literal (un solo token) y
-'[ae03]' es una clase de caracteres (tambien un solo token).
-"""
-
 # Tipos de token que maneja el programa.
-LITERAL = "literal"        # a, [ae03], \(, \n, ., @
-GRUPO_INI = "grupo_ini"    # (
-GRUPO_FIN = "grupo_fin"    # )
-OPERADOR = "operador"      # | y el punto de concatenacion
-UNARIO = "unario"          # * + ?
+LITERAL = "literal"        
+GRUPO_INI = "grupo_ini"    
+GRUPO_FIN = "grupo_fin"    
+OPERADOR = "operador"      
+UNARIO = "unario"          
 
 OPERADORES_UNARIOS = "*+?"
-CONCATENACION = "·"        # operador de concatenacion explicito. Se usa '·'
-                           # y no '.' porque el punto aparece como literal
-                           # dentro de varias de las expresiones del enunciado.
-EPSILON = "ε"              # cadena vacia, necesaria para expandir el '?'
+CONCATENACION = "·"        
+                           
+                           
+EPSILON = "ε"              
 
 
 class ErrorDeSintaxis(Exception):
@@ -51,9 +42,7 @@ def tokenizar(expresion):
         # Los espacios en blanco no forman parte de la expresion.
         if caracter.isspace():
             i += 1
-
-        # Verificador de caracteres escapados: '\' mas el siguiente caracter
-        # forman un unico literal, sin importar si es un metacaracter.
+        
         elif caracter == '\\':
             if i + 1 >= n:
                 raise ErrorDeSintaxis("La expresion termina con un '\\' suelto")
@@ -91,9 +80,7 @@ def tokenizar(expresion):
         elif caracter in OPERADORES_UNARIOS:
             tokens.append(Token(UNARIO, caracter))
             i += 1
-
-        # Cualquier otro caracter (letras, digitos, '.', '@', '{', '}', etc.)
-        # se trata como un simbolo literal del alfabeto.
+            
         else:
             tokens.append(Token(LITERAL, caracter))
             i += 1

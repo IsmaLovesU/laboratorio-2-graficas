@@ -1,12 +1,3 @@
-"""
-Verificador de balanceo de expresiones en formato infix.
-
-La idea es recorrer la expresion de izquierda a derecha una sola vez:
-  - cada simbolo de apertura se apila,
-  - cada simbolo de cierre debe corresponder al que esta en el tope,
-  - al final la pila debe quedar vacia.
-"""
-
 from pila import Pila
 
 # Pares de simbolos que nos interesa rastrear.

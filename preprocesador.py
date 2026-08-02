@@ -1,32 +1,8 @@
-"""
-Preprocesamiento de la lista de tokens antes de aplicar Shunting Yard.
-
-Se hacen dos cosas:
-
-1. Expandir las extensiones '+' y '?' a operadores basicos:
-       X+  ->  (X X*)
-       X?  ->  (X | e)
-   De esta manera al final solo queda '*' como operador unario, que es lo
-   que necesita la construccion de Thompson.
-
-2. Insertar el operador de concatenacion de forma explicita, porque en la
-   notacion infix de las expresiones regulares la concatenacion es
-   implicita y Shunting Yard necesita verla como un operador mas.
-"""
-
 from tokenizador import (Token, ErrorDeSintaxis, LITERAL, GRUPO_INI,
                          GRUPO_FIN, OPERADOR, UNARIO, CONCATENACION, EPSILON)
 
 
 def _extraer_operando(salida):
-    """
-    Saca de la lista 'salida' el ultimo operando completo y lo devuelve.
-
-    El operando puede ser:
-      - un literal suelto:            a
-      - un literal con un '*':        a*
-      - un grupo entre parentesis:    (a|b)   o   (a|b)*
-    """
     if len(salida) == 0:
         raise ErrorDeSintaxis("Un operador unario aparecio sin operando")
 
@@ -86,13 +62,7 @@ def expandir_extensiones(tokens):
 
 
 def insertar_concatenacion(tokens):
-    """
-    Agrega el operador de concatenacion entre dos tokens cuando corresponde.
 
-    Se concatena si el token de la izquierda puede terminar una expresion
-    (un literal, un ')' o un '*') y el de la derecha puede empezar una
-    (un literal o un '(').
-    """
     puede_terminar = (LITERAL, GRUPO_FIN, UNARIO)
     puede_empezar = (LITERAL, GRUPO_INI)
 

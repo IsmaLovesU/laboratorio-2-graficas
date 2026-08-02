@@ -1,17 +1,3 @@
-"""
-Algoritmo de Shunting Yard adaptado a expresiones regulares.
-
-Precedencias (de mayor a menor):
-    *   operador unario postfijo (clausura de Kleene)
-    ·   concatenacion
-    |   alternancia
-
-El '*' es postfijo, asi que cuando se lee ya tiene su operando completo
-en la salida y puede escribirse de una vez. Los operadores binarios si
-pasan por la pila y se comparan por precedencia.
-"""
-
-# Se reutiliza la misma pila implementada en el problema 2.
 from pila import Pila
 
 from tokenizador import (ErrorDeSintaxis, LITERAL, GRUPO_INI, GRUPO_FIN,
