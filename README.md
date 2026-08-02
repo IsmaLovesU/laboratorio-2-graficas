@@ -1,6 +1,7 @@
 # Laboratorio 2 - Teoría de la Computación
 
 Repositorio con las soluciones del laboratorio 2. Cada ejercicio va en su propia branch.
+[Video de ejecución)](https://youtu.be/1uaFaH1_GMk)
 
 ## Estructura de branches
 
